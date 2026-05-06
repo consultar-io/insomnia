@@ -1,10 +1,10 @@
 type: collection.insomnia.rest/5.0
 schema_version: "5.1"
-name: APIs
+name: APIs Consultar.IO
 meta:
   id: wrk_eab96e2545844bf5a22d31a2e77acd83
   created: 1778094871045
-  modified: 1778094871045
+  modified: 1778095084518
   description: ""
 collection:
   - name: APIs
@@ -41,7 +41,7 @@ collection:
             meta:
               id: req_227deba353b746358fa00992cbbba967
               created: 1778094871054
-              modified: 1778094871054
+              modified: 1778094990666
               isPrivate: false
               description: |-
                 ## Consultar CNPJ
