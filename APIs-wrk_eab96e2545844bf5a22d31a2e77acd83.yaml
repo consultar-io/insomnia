@@ -1,0 +1,620 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: APIs
+meta:
+  id: wrk_eab96e2545844bf5a22d31a2e77acd83
+  created: 1778094871045
+  modified: 1778094871045
+  description: ""
+collection:
+  - name: APIs
+    meta:
+      id: fld_1c61f3f6f76e4896a053d504bd1c0780
+      created: 1778094871052
+      modified: 1778094871052
+      sortKey: -1778094869183
+      description: |-
+        ## Sobre
+
+        As APIs do [Consultar.IO](https://consultar.io/?utm_source=docs&utm_medium=referral&utm_campaign=index) são APIs RESTful que permitem consultar e buscar informações sobre estabelecimentos, pessoas, profissionais e endereços.
+
+        ## Autenticação
+
+        Consulte a documentação de [Autenticação](https://docs.consultar.io/autenticacao/) para mais informações sobre o processo de autenticação.
+    children:
+      - name: API CNPJ
+        meta:
+          id: fld_624dec403be8420b89c4b6d0ed90f512
+          created: 1778094871053
+          modified: 1778094871053
+          sortKey: -1778094869182
+          description: >-
+            ## Introdução
+
+
+            Esta API permite consultar e buscar informações sobre empresas e
+            estabelecimentos registrados no Cadastro Nacional de Pessoa Jurídica
+            (CNPJ).
+        children:
+          - url: https://consultar.io/api/v1/cnpj/consultar
+            name: Consultar CNPJ
+            meta:
+              id: req_227deba353b746358fa00992cbbba967
+              created: 1778094871054
+              modified: 1778094871054
+              isPrivate: false
+              description: |-
+                ## Consultar CNPJ
+
+                **(Consultar pelo CNPJ)**
+
+                Consulta detalhes de um CNPJ específico.
+              sortKey: -1778094869181
+            method: GET
+            parameters:
+              - name: cnpj
+                value: "42515236000100"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: API CPF + Data de Nascimento
+        meta:
+          id: fld_719db84c34464c32af8c57388ad830f7
+          created: 1778094871055
+          modified: 1778094871055
+          sortKey: -1778094869180
+          description: >-
+            ## Introdução
+
+
+            Esta API permite consultar informações sobre pessoas físicas
+            registradas no Cadastro de Pessoas Físicas (CPF) do Brasil.
+
+
+            ## Lei nº 15.211/2025 - ECA Digital
+
+
+            Utilize nossos dados como parte de um fluxo robusto de verificação
+            de idade. Integre nossa solução a outras soluções de autenticação e
+            biometria para atender aos requisitos da Lei nº 15.211/2025,
+            conhecida como "ECA Digital", que exige a verificação de idade para
+            acesso a conteúdos e serviços online destinados a menores de 18
+            anos.
+        children:
+          - url: https://consultar.io/api/v1/cpf/consultar
+            name: Consultar CPF
+            meta:
+              id: req_2ece915c898546fcb594128ff5dadfd3
+              created: 1778094871056
+              modified: 1778094871056
+              isPrivate: false
+              description: |-
+                ## Consultar CPF
+
+                **(Consultar pelo CPF e Data de Nascimento)**
+
+                Consulta detalhes de um CPF específico.
+              sortKey: -1778094869179
+            method: GET
+            parameters:
+              - name: cpf
+                value: "87135740009"
+                disabled: false
+              - name: data_nascimento
+                value: 1990-01-01
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: API Inscrição Estadual
+        meta:
+          id: fld_5f232a9516374b86b7b85a684987117c
+          created: 1778094871056
+          modified: 1778094871056
+          sortKey: -1778094869178
+          description: >-
+            ## Introdução
+
+
+            Esta API permite consultar informações sobre Inscrições Estaduais no
+            SINTEGRA. A consulta de Inscrições Estaduais é realizada pelo CNPJ
+            ou CPF do contribuinte, juntamente com a UF.
+
+
+            Também é possível consultar informações de Produtores Rurais pelo
+            CPF.
+        children:
+          - url: https://consultar.io/api/v2/ie/consultar
+            name: Consultar IE por UF
+            meta:
+              id: req_d5af1448b5fd466dafd1f3b837467c66
+              created: 1778094871057
+              modified: 1778094871057
+              isPrivate: false
+              description: |-
+                ## Consultar IE por UF
+
+                **(Consultar pelo CNPJ ou CPF)**
+
+                Consulta detalhes de uma Inscrição Estadual específica.
+              sortKey: -1778094869177
+            method: GET
+            parameters:
+              - name: uf
+                value: SP
+                disabled: false
+              - name: cnpj
+                value: "61585865150633"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://consultar.io/api/v2/ie/consultar/todas
+            name: Consultar IE em Todas as UFs
+            meta:
+              id: req_5b9569f664c74af68e63e24bbf1a5a45
+              created: 1778094871059
+              modified: 1778094871059
+              isPrivate: false
+              description: >-
+                ## Consultar IE em Todas as UFs
+
+
+                **(Consultar pelo CNPJ ou CPF)**
+
+
+                Consulta detalhes de todas as Inscrições Estaduais em todas as
+                UFs.
+              sortKey: -1778094869176
+            method: GET
+            parameters:
+              - name: cnpj
+                value: "61585865150633"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: API CEP
+        meta:
+          id: fld_8f445b064cd84644b70eea66447ad2aa
+          created: 1778094871059
+          modified: 1778094871059
+          sortKey: -1778094869175
+          description: >-
+            ## Introdução
+
+
+            Esta API permite consultar os dados de um endereço a partir de um
+            CEP.
+        children:
+          - url: https://consultar.io/api/v2/cep/consultar
+            name: Consultar CEP
+            meta:
+              id: req_d529a80c3faa46ceac5cff7785f88afe
+              created: 1778094871060
+              modified: 1778094871060
+              isPrivate: false
+              description: |-
+                ## Consultar CEP
+
+                **(Consultar pelo CEP)**
+
+                Consulta detalhes de um CEP específico.
+              sortKey: -1778094869174
+            method: GET
+            parameters:
+              - name: cep
+                value: "04571000"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://consultar.io/api/v2/cep/buscar
+            name: Buscar CEP
+            meta:
+              id: req_61a5b79c6a86414da8b8afec3d7c350c
+              created: 1778094871061
+              modified: 1778094871061
+              isPrivate: false
+              description: |-
+                ## Buscar CEP
+
+                **(Buscar pelo Endereço)**
+
+                Consulta detalhes de um CEP específico.
+              sortKey: -1778094869173
+            method: GET
+            parameters:
+              - name: logradouro
+                value: Avenida Engenheiro Luiz Carlos Berrini
+                disabled: false
+              - name: localidade
+                value: São Paulo
+                disabled: false
+              - name: uf
+                value: SP
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: API Geocodificação
+        meta:
+          id: fld_e7bbfcb1088b493aab06217d736e2eb4
+          created: 1778094871062
+          modified: 1778094871062
+          sortKey: -1778094869172
+          description: >-
+            ## Introdução
+
+
+            Esta API permite consultar a latitude e longitude de um endereço,
+            também conhecido como geocodificação, em inglês, "geocode" ou
+            "geocoding".
+        children:
+          - url: https://consultar.io/api/v2/geocodificacao/consultar
+            name: Consultar Geocodificação
+            meta:
+              id: req_962631be8e454790bc018c71994417a9
+              created: 1778094871062
+              modified: 1778094871062
+              isPrivate: false
+              description: |-
+                ## Consultar Geocodificação
+
+                **(Consultar pelo Endereço)**
+
+                Consulta as coordenadas geográficas de um endereço específico.
+              sortKey: -1778094869171
+            method: GET
+            parameters:
+              - name: endereco
+                value: AVENIDA ENGENHEIRO LUIZ CARLOS BERRINI, 1748, SAO PAULO, SP
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://consultar.io/api/v2/geocodificacao/reversa/consultar
+            name: Consultar Geocodificação Reversa
+            meta:
+              id: req_5a98ba6a7d5146578e8f4a6626a16a95
+              created: 1778094871063
+              modified: 1778094871063
+              isPrivate: false
+              description: |-
+                ## Consultar Geocodificação Reversa
+
+                **(Consultar pela Latitude/Longitude)**
+
+                Consulta o endereço a partir de coordenadas geográficas.
+              sortKey: -1778094869170
+            method: GET
+            parameters:
+              - name: coordenadas
+                value: -23.6004352,-46.6910367
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: API CRM
+        meta:
+          id: fld_3840b533d2aa481ba0aa6428ab698f37
+          created: 1778094871063
+          modified: 1778094871063
+          sortKey: -1778094869169
+          description: >-
+            ## Introdução
+
+
+            Esta API permite consultar e buscar informações sobre médicos
+            registrados nos Conselhos Regionais de Medicina (CRM) do Brasil.
+        children:
+          - url: https://consultar.io/api/v1/crm/consultar
+            name: Consultar CRM
+            meta:
+              id: req_915118d904b24e6eb830f32398a9b612
+              created: 1778094871063
+              modified: 1778094871063
+              isPrivate: false
+              description: |-
+                ## Consultar CRM
+
+                **(Consultar pelo CRM)**
+
+                Consulta detalhes de um registro específico.
+              sortKey: -1778094869168
+            method: GET
+            parameters:
+              - name: uf
+                value: SP
+                disabled: false
+              - name: numero_registro
+                value: "1234567"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://consultar.io/api/v1/crm/buscar
+            name: Buscar CRM
+            meta:
+              id: req_0cc9e51db4394b0a87244c57acafbcf0
+              created: 1778094871064
+              modified: 1778094871064
+              isPrivate: false
+              description: |-
+                ## Buscar CRM
+
+                (Buscar pelo Nome)
+
+                Realiza busca de médicos pelo nome.
+              sortKey: -1778094869167
+            method: GET
+            parameters:
+              - name: nome_razao_social
+                value: joao silva
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: API CRO
+        meta:
+          id: fld_7185755d6d514961a4c9c95b956fb076
+          created: 1778094871067
+          modified: 1778094871067
+          sortKey: -1778094869166
+          description: >-
+            ## Introdução
+
+
+            Esta API permite consultar e buscar informações sobre profissionais
+            e estabelecimentos registrados nos Conselhos Regionais de
+            Odontologia (CRO) do Brasil.
+        children:
+          - url: https://consultar.io/api/v1/cro/consultar
+            name: Consultar CRO
+            meta:
+              id: req_a3267ab395194c0c92242dac301fa0bf
+              created: 1778094871067
+              modified: 1778094871067
+              isPrivate: false
+              description: |-
+                ## Consultar CRO
+
+                (Consultar pelo CRO)
+
+                Consulta detalhes de um registro específico.
+              sortKey: -1778094869165
+            method: GET
+            parameters:
+              - name: uf
+                value: SP
+                disabled: false
+              - name: numero_registro
+                value: "1234567"
+                disabled: false
+              - name: categoria
+                value: cd
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://consultar.io/api/v1/cro/buscar
+            name: Buscar CRO
+            meta:
+              id: req_871ac5d3759b48e09045b10fe8afcc2c
+              created: 1778094871068
+              modified: 1778094871068
+              isPrivate: false
+              description: |-
+                ## Buscar CRO
+
+                **(Buscar pelo Nome)**
+
+                Realiza busca de profissionais/estabelecimentos pelo nome.
+              sortKey: -1778094869164
+            method: GET
+            parameters:
+              - name: nome_razao_social
+                value: joao silva
+                disabled: false
+              - name: categoria
+                value: cd
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: API CRBM
+        meta:
+          id: fld_593940ede22b43288d4ce2cc1da257ce
+          created: 1778094871068
+          modified: 1778094871068
+          sortKey: -1778094869163
+          description: >-
+            ## Introdução
+
+
+            Esta API permite consultar e buscar informações sobre profissionais
+            e estabelecimentos registrados nos Conselhos Regionais de
+            Biomedicina (CRBM) do Brasil.
+        children:
+          - url: https://consultar.io/api/v1/crbm/consultar
+            name: Consultar CRBM
+            meta:
+              id: req_a2690787b471403597a37e675aa55c17
+              created: 1778094871068
+              modified: 1778094871068
+              isPrivate: false
+              description: |-
+                ## Consultar CRBM
+
+                **(Consultar pelo CRBM)**
+
+                Consulta detalhes de um registro específico.
+              sortKey: -1778094869162
+            method: GET
+            parameters:
+              - name: regiao
+                value: "01"
+                disabled: false
+              - name: numero_registro
+                value: "1234567"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://consultar.io/api/v1/crbm/buscar
+            name: Buscar CRBM
+            meta:
+              id: req_34fb451ac91140cf9d08e1559e48f472
+              created: 1778094871069
+              modified: 1778094871069
+              isPrivate: false
+              description: |-
+                ## Buscar CRBM
+
+                **(Buscar pelo Nome)**
+
+                Realiza busca de profissionais pelo nome.
+              sortKey: -1778094869161
+            method: GET
+            parameters:
+              - name: nome_razao_social
+                value: joao silva
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: API CRF
+        meta:
+          id: fld_cee7f34a3d934a6ba696d7526a870b6b
+          created: 1778094871069
+          modified: 1778094871069
+          sortKey: -1778094869160
+          description: >-
+            ## Introdução
+
+
+            Esta API permite consultar profissionais e estabelecimentos
+            registrados nos Conselhos Regionais de Farmácia (CRF) do Brasil.
+        children:
+          - url: https://consultar.io/api/v1/crf/consultar
+            name: Consultar CRF
+            meta:
+              id: req_e04bc8dc2c564df995774891b45a1f66
+              created: 1778094871070
+              modified: 1778094871070
+              isPrivate: false
+              description: |-
+                ## Consultar CRF
+
+                **(Consultar pelo CRF)**
+
+                Consulta detalhes de um registro específico.
+              sortKey: -1778094869159
+            method: GET
+            parameters:
+              - name: uf
+                value: SP
+                disabled: false
+              - name: numero_registro
+                value: "1234567"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: Token {{token}}
+      disabled: false
+      addTo: header
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_7e492b766c23a0b475e1ac60411dc6c90e0ec900
+    created: 1778094871152
+    modified: 1778094871152
+environments:
+  name: Variables
+  meta:
+    id: env_bbe44115bc184ca2bed75438049de77b
+    created: 1778094871070
+    modified: 1778094871070
+    isPrivate: false
+  data:
+    token: ""
